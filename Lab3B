@@ -1,0 +1,17 @@
+"""o	Write a program that prompts the user for their Current Balance on their credit card and their Annual Percentage Rate (APR) of the card. 
+o	Make sure to read these inputs as floats.
+o	Then, the program should calculate the Monthly Percentage Rate by dividing the APR by 12.
+o	Use the Monthly Percentage Rate(MPR) to calculate the Minimum Payment. Remember to use the MPR as a decimal value for this calculation by dividing it by 100.
+You can calculate this value by multiplying the current balance on the credit card (Amount Owed) times the Monthly Percentage Rate:
+"""
+
+
+if __name__ == "__main__":
+            amount_owed = float(input("Amount owed: $"))
+            apr = float(input("APR: "))
+            
+            monthly_percentage_rate = (apr / 12)
+            minimum_payment = (amount_owed * (monthly_percentage_rate / 100))
+
+            print(f"Monthly percentage rate: {monthly_percentage_rate:.2f}")
+            print(f"Minimum payment: ${minimum_payment:.2f}")
