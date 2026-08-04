@@ -53,8 +53,7 @@ def my_Account(name, saved_password, signed_in):
         
 
 
-    
-        
+
 
 def main():
     name = ""
@@ -63,31 +62,26 @@ def main():
     signed_in = False
 
     while True:
-        if signed_in == False:
-
-            print("Choose an option: \n '1. Buy Tickets'\n '2. My account'\n '3. Exit'")
-            option = input("> ")
-
-            if option == "1":
-                buy_tickets(signed_in)
-
-            elif option == "2":
-                name, saved_password, signed_in = my_Account(name, saved_password, signed_in)
-
-            elif option == "3":
-                print("Goodbye!")
-                break
-
-            else:
-                print("Error please enter an option 1-3")
-
-        elif signed_in == True:
-
+        if signed_in == True:
             print(f"Welcome {name}!")
-            print("Choose an option: \n '1. Buy Tickets'\n '2. My account'\n '3. Exit'")
-            option = input("> ")
-            if option == "1":
-                buy_tickets(signed_in)
+        
+        print("Choose an option: \n '1. Buy Tickets'\n '2. My account'\n '3. Exit'")
+        option = input("> ")
+
+        if option == "1":
+            buy_tickets(signed_in)
+
+        elif option == "2":
+            name, saved_password, signed_in = my_Account(name, saved_password, signed_in)
+
+        elif option == "3":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Error please enter an option 1-3")
+
+        
 
 if __name__ == "__main__":
     main()
