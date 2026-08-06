@@ -1,0 +1,24 @@
+def format_word(word):
+
+    word = word.capitalize()
+    return word
+
+def convert_to_pascal_case(text):
+
+    word_bank = ""
+    Pascal_string = ""
+
+    for char in text:
+        if char != " ":
+            word_bank += char
+        elif char == " ":
+            Pascal_string += format_word(word_bank)
+            word_bank = ""
+    Pascal_string += format_word(word_bank)
+    return Pascal_string
+
+def main():
+    word = input("Enter a string: ")
+    print(f"Pascal Case: {convert_to_pascal_case(word)}")
+if __name__ == "__main__":
+    main()
