@@ -1,9 +1,11 @@
-x = ""
-y = ""
+x = " "
+y = " "
 
 for char in "hi there":
-    x += char
     if char == " ":
         y += char
+        x = ""
+    else:
+        x += char
+
 print(x)
-print(y)
