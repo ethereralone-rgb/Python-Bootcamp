@@ -1,0 +1,20 @@
+def arnParse(arn):
+    arnParts = arn.split(":",5)
+    print(f"Partition: {arnParts[1]}")
+    print(f"Service: {arnParts[2]}")
+    print(f"Region: {arnParts[3]}")
+    print(f"Account: {arnParts[4]}")
+    print(f"Resource: {arnParts[5]}")
+    return arnParts
+
+
+
+
+def main():
+    arn = input("Please enter the ARN: ")
+    arnParts = arnParse(arn)
+    
+
+
+if __name__ == "__main__":
+    main()
