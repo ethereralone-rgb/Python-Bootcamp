@@ -7,6 +7,9 @@ def arnParse(arn):
     print(f"Resource: {arnParts[5]}")
     return arnParts
 
+
+
+
 def main():
     arn = input("Please enter the ARN: ")
     arnParts = arnParse(arn)
