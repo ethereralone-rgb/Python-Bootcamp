@@ -1,0 +1,19 @@
+import random
+
+def main():
+    roll_sum = 0 
+    seed_value = int(input("Enter a seed value: "))
+    die_roll = int(input("How many times would you like to roll the die? "))
+    random.seed(seed_value)
+    for i in range(die_roll):
+        roll = random.randint(1,6)
+        roll_sum += roll
+        print(f"Roll{i +1} : {roll} ")
+    print(f"Roll total: {roll_sum}")
+
+   
+
+
+
+if __name__ == "__main__":
+    main()
