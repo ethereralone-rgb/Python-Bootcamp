@@ -9,7 +9,7 @@ def main():
         roll = random.randint(1,6)
         roll_sum += roll
         print(f"Roll{i +1} : {roll} ")
-    print(f"Roll total: {roll_sum}")
+    print(f"Total: {roll_sum}")
 
    
 
