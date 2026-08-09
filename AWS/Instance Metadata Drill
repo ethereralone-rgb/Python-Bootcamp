@@ -1,0 +1,19 @@
+def main():
+    
+    instanceId = "i-0abc123def56789"
+    az = "us-east-1a"
+    account_id = "123456789012"
+    key = "logs/2026/8/app-server.log"
+
+
+
+
+    print(f"ID without prefix: {instanceId[2::]}")
+    print(f"Region: {az[:9]}")
+    print(f"AZ letter: {az[-1::]}")
+    print("Masked Account: " +  "*" * 8 + account_id[8::])
+    print(f"Extension: {key[-4::]}")
+    print(f"Key Reversed: {key[::-1]}")
+
+if __name__ == "__main__":
+    main()
