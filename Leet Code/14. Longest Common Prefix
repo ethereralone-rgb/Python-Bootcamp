@@ -1,0 +1,15 @@
+def main():
+    pass
+    strs = []
+    shortest = len(word)
+    for word in strs:
+        if len(word) < shortest:
+            shortest = len(word)
+    return shortest
+
+        
+
+
+
+if __name__ == "__main__":
+    main()
