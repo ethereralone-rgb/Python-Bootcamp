@@ -92,16 +92,42 @@ def main():
             # Add the completed row to Matrix B 
             matrixB.append(row)
 
-    # ------------------------
-    # Display the Two Matrices
-    # ------------------------
-    print()
-    print("Matrix A:")
-    print_matrix(matrixA)
+        # ------------------------
+        # Display the Two Matrices
+        # ------------------------
+        print()
+        print("Matrix A:")
+        print_matrix(matrixA)
+
+        print()
+        print("Matrix B:")
+        print_matrix(matrixB)
+
+    # --------------------------
+    # Build the Matrices product
+    # --------------------------
+
+    matrix_product = []
+
+    for r in range(rows1):
+        product_row = []
+
+        for c in range(cols2):
+            total = 0
+
+            for k in range(cols1):
+                total += matrixA[r][k] * matrixB[k][c]
+
+            product_row.append(total)
+
+        matrix_product.append(product_row)
+
+    # Display the product 
 
     print()
-    print("Matrix B:")
-    print_matrix(matrixB)
+    print("Matrix Product:")
+    print_matrix(matrix_product)
+
 
 
 
