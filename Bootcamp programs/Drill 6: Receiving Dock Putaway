@@ -28,7 +28,7 @@ def main():
         print(f"Number of open spaces: {open_space}")
     print()
 
-    while open_space > 0:
+    while truck_pallets > 0:
         print_chart(dock_space)
         unload_truck = int(input(f"Enter the row you want to unload at (0-{rows - 1}): "))
         unload_truck2 = int(input(f"Enter the column you want to unload at (0-{cols - 1}): "))
@@ -39,8 +39,10 @@ def main():
             truck_pallets -= 1
             dock_space[unload_truck][unload_truck2] = "P"
             print("You filled this space, return for another pallet.")
-        else:
-            print("You already filled this space, pick another spot.")
+            print(f"Remaining spaces: {open_space}")
+            print(f"Remaining Pallets: {truck_pallets}")
+        
+        print("You already filled this space, pick another spot.")
     print_chart(dock_space)
     
             
