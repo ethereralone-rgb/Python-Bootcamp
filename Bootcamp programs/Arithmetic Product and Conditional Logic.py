@@ -1,6 +1,6 @@
 def product(x,y):
     product = x * y 
-    if product < 1000:
+    if product <= 1000:
         return product
     else:
         sum = x + y
