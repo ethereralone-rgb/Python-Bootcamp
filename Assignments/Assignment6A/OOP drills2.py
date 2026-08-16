@@ -166,16 +166,36 @@ class BankAccount:
             print(f"{i}. {entry}")
 
 
-acct = BankAccount("Ada", 100)
+class Room:
+    # name: what to call the room, current_temp: how warm it is right now
+    def __init__(self, name: str, current_temp: int) -> None:
+        self.name = name 
+        self.current_temp = current_temp
 
-print(acct)              # Ada's account: balance 100
-acct.print_history()     # No transactions yet.
 
-acct.deposit(50)         # balance 150
-acct.deposit(-10)        # rejected, NOT logged
-acct.withdraw(30)        # balance 120
-acct.withdraw(9999)      # insufficient, NOT logged
-acct.withdraw(0)         # rejected, NOT logged
+    # -> str not None becuase this will returns text instead of printing it 
+    # caller decides what to do with it 
+    def __str__(self) -> str:
+        return f"{self.name} is {self.current_temp} degrees"
 
-print(acct)              # Ada's account: balance 120
-acct.print_history()     # should show exactly 3 entries
+class Thermostat:
+    def __init__(self, target_temp: int) -> None:
+        self.target_temp = target_temp
+
+    # Room is a hint. Like saying "Pass me a Room object"
+    def regulate(self, room: Room) -> None:
+        # room.current_temp reaches into the OTHER object to read its data.
+        # self.target_temp reads this thermostat's own data 
+        # Both dots mean the same thing "Look into this object"
+        if room.current_temp < self.target_temp:
+            room.current_temp += 1 
+            print(f"Heating {room.name}.... now {room.current_temp}")
+
+        elif room.current_temp > self.target_temp:
+            room.current_temp -= 1
+            print(f"Cooling {room.name}... now {room.current_temp}")
+
+
+        else:
+            # neither less nor greater so they are equal, no change needed
+            print(f"{room.name} is at target({self.target_temp})")
